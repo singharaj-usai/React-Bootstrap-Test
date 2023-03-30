@@ -1,5 +1,5 @@
 import React from 'react';
-import AppNavbar from './Components/Sections/Navbar';
+import AppNavbar from './Sections/Navbar';
 
 function Layout(props) {
     return (

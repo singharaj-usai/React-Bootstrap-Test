@@ -1,12 +1,6 @@
 import React from 'react';
 import { Navbar, Nav } from 'react-bootstrap';
-import { Link, LinkProps } from 'react-router-dom';
-
-interface NavlinkProps extends LinkProps {}
-
-function Navlink(props: NavlinkProps) {
-    return <Nav.Link as={Link} {...props} />;
-}
+import { Link } from 'react-router-dom';
 
 function AppNavbar(props) {
     const { brand, links } = props;
