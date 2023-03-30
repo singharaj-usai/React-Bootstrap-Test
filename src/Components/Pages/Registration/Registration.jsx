@@ -24,9 +24,15 @@ function Registration() {
                             <Form.Control
                                 type="username"
                                 placeholder="Enter username"
-                                {...register('username', { required: true })}
+                                {...register('username', { required: true, minLength: 4 })}
                             />
-                            {errors.username && <p className="text-danger">Username is required</p>}
+                            {errors.username && errors.username.type === 'required' && (
+                                <p className="text-danger">Username is required</p>
+                            )}
+                            {errors.username && errors.username.type === 'minLength' && (
+                                <p className="text-danger">Username must be at least 5 characters long</p>
+                            )}
+
                         </Form.Group>
 
                         <Form.Group controlId="formBasicEmail">
