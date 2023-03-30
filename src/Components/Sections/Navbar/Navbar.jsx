@@ -1,5 +1,5 @@
 import React from 'react';
-import { Navbar, Nav, Container, Form, Button } from 'react-bootstrap';
+import { Navbar, Nav, Container, Form, Button, Dropdown } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 
 function AppNavbar(props) {
@@ -25,6 +25,7 @@ function AppNavbar(props) {
                                 {link.title}
                             </Nav.Link>
                         ))}
+
                         <Nav>
                             <Form className="d-flex align-items-center">
                                 <Form.Control

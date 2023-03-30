@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 import { useForm } from 'react-hook-form';
 import { Form, Button, Container, Row, Col } from 'react-bootstrap';
 
@@ -13,6 +13,13 @@ function Registration() {
         console.log(data);
     };
 
+    const password = useRef('');
+
+    useEffect(() => {
+        password.current = register('password', { required: true, minLength: 8 });
+    }, [register]);
+
+
     return (
         <Container>
             <Row className="justify-content-center">
@@ -22,7 +29,7 @@ function Registration() {
                         <Form.Group controlId="formBasicUsername">
                             <Form.Label>Username</Form.Label>
                             <Form.Control
-                                type="username"
+                                type="text"
                                 placeholder="Enter username"
                                 {...register('username', { required: true, minLength: 4 })}
                             />
@@ -30,9 +37,8 @@ function Registration() {
                                 <p className="text-danger">Username is required</p>
                             )}
                             {errors.username && errors.username.type === 'minLength' && (
-                                <p className="text-danger">Username must be at least 5 characters long</p>
+                                <p className="text-danger">Username must be at least 4 characters long</p>
                             )}
-
                         </Form.Group>
 
                         <Form.Group controlId="formBasicEmail">
@@ -55,7 +61,10 @@ function Registration() {
                             <Form.Control
                                 type="password"
                                 placeholder="Password"
-                                {...register('password', { required: true, minLength: 8 })}
+                                {...register('password', { required: true, minLength: 8, value: '' })}
+                                ref={(e) => {
+                                    password.current = e;
+                                }}
                             />
                             {errors.password && errors.password.type === 'required' && (
                                 <p className="text-danger">Password is required</p>
@@ -72,9 +81,10 @@ function Registration() {
                                 placeholder="Confirm Password"
                                 {...register('confirmPassword', {
                                     required: true,
-                                    validate: (value) => value === document.getElementById('password').value,
+                                    validate: (value) => value === password.current.value,
                                 })}
                             />
+
                             {errors.confirmPassword && errors.confirmPassword.type === 'required' && (
                                 <p className="text-danger">Confirm Password is required</p>
                             )}
@@ -83,9 +93,10 @@ function Registration() {
                             )}
                         </Form.Group>
 
-                        <Button variant="primary" type="submit">
+                        <Button variant="success" type="submit" className="btn-green w-100">
                             Sign Up
                         </Button>
+
                     </Form>
                 </Col>
             </Row>

@@ -10,6 +10,7 @@ function Layout(props) {
                 links={[
                     { title: 'Home', url: '/' },
                     { title: 'About', url: '/about' },
+                    { title: 'Catalog', url: '/about' },
                 ]}
             />
             <div className="container">{props.children}</div>

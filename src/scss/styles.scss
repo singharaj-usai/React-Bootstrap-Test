@@ -1,0 +1,26 @@
+@import '~bootstrap/scss/bootstrap';
+
+// Define custom variables for button colors
+$btn-green: #00ff7f;
+
+// Create custom styles for the lime green button
+.btn-green {
+  background-color: $btn-green;
+  border-color: $btn-green;
+
+  &:hover {
+    background-color: lighten($btn-green, 10%);
+    border-color: lighten($btn-green, 10%);
+  }
+
+  &:active {
+    background-color: darken($btn-green, 10%);
+    border-color: darken($btn-green, 10%);
+  }
+
+  &:focus {
+    box-shadow: 0 0 0 0.2rem rgba(0, 255, 127, 0.5);
+  }
+}
+
+
