@@ -1,5 +1,5 @@
 import React from 'react';
-import { Navbar, Nav, Container } from 'react-bootstrap';
+import { Navbar, Nav, Container, Form, Button } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 
 function AppNavbar(props) {
@@ -13,7 +13,7 @@ function AppNavbar(props) {
                 </Navbar.Brand>
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">
-                    <Nav className="ml-auto roblox-nav">
+                    <Nav className="ml-auto roblox-nav me-auto my-2 my-lg-0">
                         {links.map((link, index) => (
                             <Nav.Link
                                 key={index}
@@ -26,6 +26,19 @@ function AppNavbar(props) {
                             </Nav.Link>
                         ))}
                     </Nav>
+                    <Form className="d-flex align-items-center">
+                        <Form.Control
+                            type="search"
+                            placeholder="Search"
+                            className="me-2"
+                            aria-label="Search"
+                        />
+                        <div className="d-flex">
+                            <Button variant="outline-success" className="mx-1">
+                                Search
+                            </Button>
+                        </div>
+                    </Form>
                 </Navbar.Collapse>
             </Container>
         </Navbar>
