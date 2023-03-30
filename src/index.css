@@ -11,3 +11,36 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+.roblox-navbar {
+  border-bottom: 1px solid #ddd;
+}
+
+.roblox-brand {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-right: 2rem;
+}
+
+.roblox-nav {
+  align-items: center;
+}
+
+.roblox-link {
+  color: #333;
+  font-size: 1.2rem;
+  margin-right: 1rem;
+  padding-bottom: 0.5rem;
+  text-decoration: none;
+  border-bottom: 4px solid transparent;
+}
+
+.roblox-link:hover {
+  color: #0074e4;
+  border-bottom: 4px solid #0074e4;
+}
+
+.roblox-link:focus,
+.roblox-link:active {
+  outline: none;
+  border-bottom: 4px solid #0074e4;
+}
