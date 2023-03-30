@@ -1,5 +1,6 @@
 import React from 'react';
-import AppNavbar from './Sections/Navbar';
+import AppNavbar from './Sections/Navbar/Navbar';
+import Footer from './Sections/Footer/Footer';
 
 function Layout(props) {
     return (
@@ -12,6 +13,7 @@ function Layout(props) {
                 ]}
             />
             <div className="container">{props.children}</div>
+            <Footer />
         </div>
     );
 }
