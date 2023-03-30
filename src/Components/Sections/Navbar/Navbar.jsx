@@ -25,26 +25,28 @@ function AppNavbar(props) {
                                 {link.title}
                             </Nav.Link>
                         ))}
+                        <Nav>
+                            <Form className="d-flex align-items-center">
+                                <Form.Control
+                                    type="search"
+                                    placeholder="Search"
+                                    className="me-2"
+                                    aria-label="Search"
+                                />
+                                <Button variant="light" className="mx-1">
+                                    Search
+                                </Button>
+                            </Form>
+                        </Nav>
                     </Nav>
-                    <Form className="d-flex align-items-center">
-                        <Form.Control
-                            type="search"
-                            placeholder="Search"
-                            className="me-2"
-                            aria-label="Search"
-                        />
-                        <div className="d-flex align-items-center">
-                            <Button variant="light" className="mx-1">
-                                Search
-                            </Button>
-                            <Button variant="outline-primary" className="mx-1" as={Link} to="/register">
-                                Login
-                            </Button>
-                            <Button variant="danger" className="mx-1" as={Link} to="/register">
-                                Signup
-                            </Button>
-                        </div>
-                    </Form>
+                    <Nav>
+                        <Button variant="outline-primary" className="mx-1" as={Link} to="/login">
+                            Login
+                        </Button>
+                        <Button variant="danger" className="mx-1" as={Link} to="/register">
+                            Signup
+                        </Button>
+                    </Nav>
                 </Navbar.Collapse>
             </Container>
         </Navbar>
