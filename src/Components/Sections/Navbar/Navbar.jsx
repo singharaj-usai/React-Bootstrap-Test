@@ -6,7 +6,7 @@ function AppNavbar(props) {
     const { brand, links } = props;
 
     return (
-        <Navbar bg="light" expand="md" className="roblox-navbar">
+        <Navbar bg="light" expand="lg" className="roblox-navbar">
             <Container>
                 <Navbar.Brand href="#" className="roblox-brand">
                     {brand}
@@ -33,9 +33,15 @@ function AppNavbar(props) {
                             className="me-2"
                             aria-label="Search"
                         />
-                        <div className="d-flex">
-                            <Button variant="outline-success" className="mx-1">
+                        <div className="d-flex align-items-center">
+                            <Button variant="light" className="mx-1">
                                 Search
+                            </Button>
+                            <Button variant="outline-primary" className="mx-1" as={Link} to="/register">
+                                Login
+                            </Button>
+                            <Button variant="danger" className="mx-1" as={Link} to="/register">
+                                Signup
                             </Button>
                         </div>
                     </Form>
